@@ -16,6 +16,10 @@ export class UsersComponent implements OnInit {
     email: 'noemail@gmail.com'
   };
   users = USERS;
+  selectedUser: User;
+  onSelect(user: User): void {
+    this.selectedUser = user;
+  }
 
   constructor() { }
 

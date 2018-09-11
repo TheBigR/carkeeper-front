@@ -1,19 +1,21 @@
-<div>
-  <h2>{{user.userName}} Details </h2>
-  <div><span>Role: </span>{{user.role}}</div>
-  <div><span>Email: </span>{{user.email}}</div>
+<div *ngIf="selectedUser">
+  <h2>{{selectedUser.userName}} Details </h2>
+  <div><span>Role: </span>{{selectedUser.role}}</div>
+  <div><span>Email: </span>{{selectedUser.email}}</div>
 </div>
 <div>
   <h2>My Users</h2>
   <ul class="users">
-    <li *ngFor="let user of users">
+    <li *ngFor="let user of users"
+        [class.selected]="user === selectedUser"
+        (click)="onSelect(user)">
       {{user.userName}}
     </li>
   </ul>
 </div>
 <h2>Form Section</h2>
-<div>
+<div *ngIf="selectedUser">
   <label> UserName:
-    <input [(ngModel)]="user.userName" placeholder="userName">
+    <input [(ngModel)]="selectedUser.userName" placeholder="userName">
   </label>
 </div>
