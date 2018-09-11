@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
+import { USERS} from '../../services/mocks';
 
 @Component({
   selector: 'app-users',
@@ -8,12 +9,13 @@ import { User } from '../../models/user';
 })
 export class UsersComponent implements OnInit {
   user: User = {
-    id: 'first',
+    id: 'hardcoded',
     role: 'Admin',
-    userName: 'Royke',
+    userName: 'local',
     password: 'qwerty',
     email: 'noemail@gmail.com'
   };
+  users = USERS;
 
   constructor() { }
 

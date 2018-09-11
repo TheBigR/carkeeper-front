@@ -3,6 +3,14 @@
   <div><span>Role: </span>{{user.role}}</div>
   <div><span>Email: </span>{{user.email}}</div>
 </div>
+<div>
+  <h2>My Users</h2>
+  <ul class="users">
+    <li *ngFor="let user of users">
+      {{user.userName}}
+    </li>
+  </ul>
+</div>
 <h2>Form Section</h2>
 <div>
   <label> UserName:
