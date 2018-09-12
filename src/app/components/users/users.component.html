@@ -1,8 +1,4 @@
-<div *ngIf="selectedUser">
-  <h2>{{selectedUser.userName}} Details </h2>
-  <div><span>Role: </span>{{selectedUser.role}}</div>
-  <div><span>Email: </span>{{selectedUser.email}}</div>
-</div>
+
 <div>
   <h2>My Users</h2>
   <ul class="users">
@@ -13,9 +9,6 @@
     </li>
   </ul>
 </div>
+<app-user-detail [user]="selectedUser"></app-user-detail>
 <h2>Form Section</h2>
-<div *ngIf="selectedUser">
-  <label> UserName:
-    <input [(ngModel)]="selectedUser.userName" placeholder="userName">
-  </label>
-</div>
+
